@@ -384,5 +384,41 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 </script>
 
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Smooth-scroll on in-page nav clicks, then remove the hash from the URL
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', e => {
+      const hash = link.getAttribute('href');
+      const id = hash.slice(1);
+      const target = document.getElementById(id);
+      if (!target) return;
+
+      e.preventDefault();
+
+      // If you want to account for a sticky header, set an offset (in px)
+      const headerOffset = 0; // change to e.g. 72 if needed
+      const y = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+
+      // Remove the hash from the address bar (no extra history entry)
+      history.replaceState(null, '', window.location.pathname + window.location.search);
+    });
+  });
+
+  // If page is opened with a deep link (e.g. /#services), scroll there, then clean URL
+  if (window.location.hash) {
+    const id = window.location.hash.substring(1);
+    const target = document.getElementById(id);
+    if (target) {
+      const headerOffset = 0; // match the value above if you set one
+      const y = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+      window.scrollTo({ top: y, behavior: 'instant' in window ? 'instant' : 'auto' });
+      history.replaceState(null, '', window.location.pathname + window.location.search);
+    }
+  }
+});
+</script>
+  
 </body>
 </html>
