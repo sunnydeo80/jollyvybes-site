@@ -72,11 +72,11 @@ a { accent-color: var(--rv-primary); }
             After reinventing myself across science, creativity and consulting to fintech, I now bring lived experience backed by research. A blend of art and science to help leaders navigate transition, build cross‑cultural strength, and create momentum through change.
           </p>
           <div class="mt-8 flex flex-wrap items-center gap-4">
-            <a href="#services" class="inline-flex items-center gap-2 rounded-full btn-primary px-5 py-3 text-white font-semibold hover:!bg-[var(--rv-primary-dark)]">
+            <a href="services" class="inline-flex items-center gap-2 rounded-full btn-primary px-5 py-3 text-white font-semibold hover:!bg-[var(--rv-primary-dark)]">
               Explore Services
               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
             </a>
-            <a href="#frameworks" class="inline-flex items-center gap-2 rounded-full border border-slate-300 px-5 py-3 font-semibold text-[var(--rv-ink)] hover:bg-white">
+            <a href="frameworks" class="inline-flex items-center gap-2 rounded-full border border-slate-300 px-5 py-3 font-semibold text-[var(--rv-ink)] hover:bg-white">
               See Frameworks
             </a>
           </div>
@@ -372,9 +372,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function renderSlide() {
     document.getElementById('rv-quote').textContent = `“${rvSlides[rvIndex].q}”`;
     document.getElementById('rv-author').textContent = rvSlides[rvIndex].a;
-    
-          <div class="mt-6 flex items-center justify-center gap-2" id="rv-dots"></div>
-    
+          <div class="mt-6 flex items-center justify-center gap-2">
     const dots = document.querySelectorAll('#rv-dots button');
     dots.forEach((d, i) => d.className = 'h-2 w-2 rounded-full ' + (i === rvIndex ? 'bg-[var(--rv-primary)]' : 'bg-slate-300'));
   }
