@@ -372,7 +372,9 @@ document.addEventListener('DOMContentLoaded', function () {
   function renderSlide() {
     document.getElementById('rv-quote').textContent = `“${rvSlides[rvIndex].q}”`;
     document.getElementById('rv-author').textContent = rvSlides[rvIndex].a;
+    
           <div class="mt-6 flex items-center justify-center gap-2" id="rv-dots"></div>
+    
     const dots = document.querySelectorAll('#rv-dots button');
     dots.forEach((d, i) => d.className = 'h-2 w-2 rounded-full ' + (i === rvIndex ? 'bg-[var(--rv-primary)]' : 'bg-slate-300'));
   }
