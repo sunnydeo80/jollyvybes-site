@@ -364,11 +364,11 @@ Across London, Dubai, Singapore and Manchester, I’ve built creative and strate
     let rvIndex = 0;
     function rotateRV() {
       rvIndex = (rvIndex + 1) % rvSlides.length;
-      document.getElementById('rv-quote').textContent = `“${rvSlides[rvIndex].q}”`;
-      document.getElementById('rv-author').textContent = rvSlides[rvIndex].a;
-      const dots = document.querySelectorAll('#carousel-testimonials button');
-      dots.forEach((d,i)=> d.className = 'h-2 w-2 rounded-full ' + (i===rvIndex ? 'bg-[var(--rv-primary)]' : 'bg-slate-300'));
-    }
+  document.getElementById('rv-quote').textContent = `“${rvSlides[rvIndex].q}”`;
+  document.getElementById('rv-author').textContent = rvSlides[rvIndex].a;
+  const dots = document.querySelectorAll('#rv-dots button');
+  dots.forEach((d,i)=> d.className = 'h-2 w-2 rounded-full ' + (i===rvIndex ? 'bg-[var(--rv-primary)]' : 'bg-slate-300'));
+}
     setInterval(rotateRV, 5000);
   </script>
 
